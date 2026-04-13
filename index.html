@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeggieGlow — Cuisine végétarienne & nutrition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand"><span class="leaf">🌿</span><span class="brand-name">VeggieGlow</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#recettes">Recettes</a></li>
+      <li><a href="#calories">Calories</a></li>
+      <li><a href="#macros">Macros</a></li>
+      <li><a href="#quantites">Quantités</a></li>
+      <li><a href="#cuisson">Cuisson</a></li>
+      <li><a href="#convertisseur">Unités</a></li>
+      <li><a href="#hydratation">Hydratation</a></li>
+      <li><a href="#imc">IMC</a></li>
+      <li><a href="#astuces">Astuces</a></li>
+      <li><a href="#saison">Saison</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">La cuisine végétarienne réinventée</p>
+      <h1 class="hero-title">Mange bien,<br/><em>rayonne naturellement</em></h1>
+      <p class="hero-sub">100 recettes, calculateurs nutrition, astuces de chef — tout ce qu'il faut pour une alimentation végétarienne équilibrée et savoureuse.</p>
+      <a href="#recettes" class="cta-btn">Explorer les recettes</a>
+    </div>
+    <div class="hero-deco">
+      <div class="deco-circle c1"></div>
+      <div class="deco-circle c2"></div>
+      <div class="floating-emoji e1">🥑</div>
+      <div class="floating-emoji e2">🍋</div>
+      <div class="floating-emoji e3">🌸</div>
+      <div class="floating-emoji e4">🥕</div>
+    </div>
+  </section>
+
+  <section class="tools-overview">
+    <h2 class="section-title">Vos outils nutrition</h2>
+    <div class="tools-grid">
+      <a href="#recettes"      class="tool-card"><span>📖</span><strong>100 Recettes</strong><small>Végétariennes détaillées</small></a>
+      <a href="#calories"      class="tool-card"><span>🔥</span><strong>Calculateur calories</strong><small>Besoin journalier personnalisé</small></a>
+      <a href="#macros"        class="tool-card"><span>📊</span><strong>Répartition macros</strong><small>Protéines / Glucides / Lipides</small></a>
+      <a href="#quantites"     class="tool-card"><span>🍽️</span><strong>Quantités par personne</strong><small>Dosages adaptables</small></a>
+      <a href="#cuisson"       class="tool-card"><span>⏱️</span><strong>Temps de cuisson</strong><small>Légumes, céréales, légumineuses</small></a>
+      <a href="#convertisseur" class="tool-card"><span>🔄</span><strong>Convertisseur d'unités</strong><small>Poids, litres, °C / °F…</small></a>
+      <a href="#hydratation"   class="tool-card"><span>💧</span><strong>Hydratation quotidienne</strong><small>Selon poids & activité</small></a>
+      <a href="#imc"           class="tool-card"><span>📏</span><strong>Calculateur IMC</strong><small>Indice de masse corporelle</small></a>
+      <a href="#astuces"       class="tool-card"><span>💡</span><strong>Astuces de chef</strong><small>Erreurs & substituts</small></a>
+      <a href="#saison"        class="tool-card"><span>🌱</span><strong>Fruits & légumes de saison</strong><small>Par mois en France</small></a>
+    </div>
+  </section>
+
+  <!-- RECETTES -->
+  <section id="recettes" class="section">
+    <div class="section-header">
+      <h2>📖 100 Recettes Végétariennes</h2>
+      <p>Cliquez sur une recette pour voir ingrédients, étapes et macros complètes</p>
+    </div>
+    <div class="recipe-search-bar">
+      <input type="text" id="recipeSearch" placeholder="🔍 Rechercher une recette…" oninput="filterRecipes()" />
+    </div>
+    <div class="recipe-filters" id="recipeFilters">
+      <button class="filter-btn active" data-cat="tous" onclick="setFilter(this)">Tous</button>
+      <button class="filter-btn" data-cat="petit-dejeuner" onclick="setFilter(this)">Petit-déjeuner</button>
+      <button class="filter-btn" data-cat="dejeuner" onclick="setFilter(this)">Déjeuner</button>
+      <button class="filter-btn" data-cat="diner" onclick="setFilter(this)">Dîner</button>
+      <button class="filter-btn" data-cat="soupe" onclick="setFilter(this)">Soupes</button>
+      <button class="filter-btn" data-cat="snack" onclick="setFilter(this)">Snacks</button>
+      <button class="filter-btn" data-cat="dessert" onclick="setFilter(this)">Desserts</button>
+      <button class="filter-btn" data-cat="boisson" onclick="setFilter(this)">Boissons</button>
+    </div>
+    <div class="recipe-count" id="recipeCount"></div>
+    <div class="recipe-grid" id="recipeGrid"></div>
+    <div class="modal-overlay" id="recipeModal" onclick="closeModal()">
+      <div class="modal-box" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALORIES -->
+  <section id="calories" class="section alt-bg">
+    <div class="section-header">
+      <h2>🔥 Calculateur de Calories</h2>
+      <p>Estimez vos besoins caloriques journaliers (formule Harris-Benedict)</p>
+    </div>
+    <div class="tool-container">
+      <div class="tool-form">
+        <div class="form-row">
+          <div class="form-group"><label>Âge</label><input type="number" id="cal-age" placeholder="30" min="10" max="100"/></div>
+          <div class="form-group"><label>Sexe</label><select id="cal-sex"><option value="homme">Homme</option><option value="femme">Femme</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Poids (kg)</label><input type="number" id="cal-weight" placeholder="65" min="30" max="250"/></div>
+          <div class="form-group"><label>Taille (cm)</label><input type="number" id="cal-height" placeholder="170" min="100" max="250"/></div>
+        </div>
+        <div class="form-group"><label>Niveau d'activité</label>
+          <select id="cal-activity">
+            <option value="1.2">Sédentaire (peu ou pas de sport)</option>
+            <option value="1.375">Légèrement actif (1–3 fois/semaine)</option>
+            <option value="1.55">Modérément actif (3–5 fois/semaine)</option>
+            <option value="1.725">Très actif (6–7 fois/semaine)</option>
+            <option value="1.9">Extrêmement actif (sport + travail physique)</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Objectif</label>
+          <select id="cal-goal">
+            <option value="perte">Perte de poids (−500 kcal)</option>
+            <option value="maintien">Maintien du poids</option>
+            <option value="prise">Prise de masse (+300 kcal)</option>
+          </select>
+        </div>
+        <button class="calc-btn" onclick="calculateCalories()">Calculer mes besoins</button>
+      </div>
+      <div class="tool-result" id="calResult"><div class="result-placeholder"><span>🥗</span><p>Remplissez le formulaire et cliquez sur <strong>Calculer</strong></p></div></div>
+    </div>
+  </section>
+
+  <!-- MACROS -->
+  <section id="macros" class="section">
+    <div class="section-header">
+      <h2>📊 Répartition des Macros</h2>
+      <p>Protéines, glucides et lipides selon votre profil</p>
+    </div>
+    <div class="tool-container">
+      <div class="tool-form">
+        <div class="form-group"><label>Calories journalières cibles (kcal)</label><input type="number" id="macro-kcal" placeholder="2000" min="1000" max="5000"/></div>
+        <div class="form-group"><label>Objectif nutritionnel</label>
+          <select id="macro-goal">
+            <option value="equilibre">Équilibré (50% G / 25% P / 25% L)</option>
+            <option value="sport">Sportif — riche en protéines (40G / 30P / 30L)</option>
+            <option value="keto">Low-carb végé (10G / 30P / 60L)</option>
+            <option value="endurance">Endurance (60G / 15P / 25L)</option>
+          </select>
+        </div>
+        <button class="calc-btn" onclick="calculateMacros()">Calculer mes macros</button>
+      </div>
+      <div class="tool-result" id="macroResult"><div class="result-placeholder"><span>📊</span><p>Entrez vos calories cibles et cliquez sur <strong>Calculer</strong></p></div></div>
+    </div>
+  </section>
+
+  <!-- QUANTITÉS -->
+  <section id="quantites" class="section alt-bg">
+    <div class="section-header">
+      <h2>🍽️ Quantités par Personne</h2>
+      <p>Les dosages standards ajustables — ne ratez plus vos proportions</p>
+    </div>
+    <div class="quantites-wrapper">
+      <div class="portions-adjuster">
+        <label>Nombre de personnes :</label>
+        <div class="portions-ctrl">
+          <button onclick="changePortion(-1)">−</button>
+          <span id="portionCount">2</span>
+          <button onclick="changePortion(1)">+</button>
+        </div>
+      </div>
+      <div class="quantites-grid" id="quantitesGrid"></div>
+      <h3 class="tips-heading">💡 Règles d'or des proportions</h3>
+      <div class="tips-cards">
+        <div class="tip-card"><strong>🍝 Pâtes sèches</strong><p>80–100g/pers en plat principal, 60g en accompagnement. Une grosse poignée ≈ 80g.</p></div>
+        <div class="tip-card"><strong>🍚 Riz cru</strong><p>60–80g/pers. Le riz double de volume à la cuisson : 80g cru → ≈ 200g cuit.</p></div>
+        <div class="tip-card"><strong>🫘 Légumineuses sèches</strong><p>60g/pers. Elles triplent : 60g sèches → ≈ 180g cuites après trempage.</p></div>
+        <div class="tip-card"><strong>🥦 Légumes</strong><p>200g minimum/pers. Comptez 30% de perte à l'épluchage et au découpage.</p></div>
+        <div class="tip-card"><strong>🥚 Œufs</strong><p>2 œufs/pers pour une omelette, 3 pour un plat principal. 1 gros œuf ≈ 60g.</p></div>
+        <div class="tip-card"><strong>🧀 Fromage à gratiner</strong><p>30–40g/pers pour garnir un gratin, 80–100g pour une fondue ou raclette.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUISSON -->
+  <section id="cuisson" class="section">
+    <div class="section-header">
+      <h2>⏱️ Temps de Cuisson</h2>
+      <p>Référence rapide pour tous vos légumes, céréales et légumineuses</p>
+    </div>
+    <div class="cuisson-search">
+      <input type="text" id="cuissonSearch" placeholder="Rechercher un aliment (ex: brocoli, lentilles…)" oninput="filterCuisson()" />
+    </div>
+    <div class="cuisson-tabs">
+      <button class="ctab active" onclick="showCuissonTab('legumes',this)">🥦 Légumes</button>
+      <button class="ctab" onclick="showCuissonTab('cereales',this)">🌾 Céréales</button>
+      <button class="ctab" onclick="showCuissonTab('legumineuses',this)">🫘 Légumineuses</button>
+      <button class="ctab" onclick="showCuissonTab('oeufs',this)">🥚 Œufs & Fromages</button>
+    </div>
+    <div id="cuissonTable"></div>
+  </section>
+
+  <!-- CONVERTISSEUR -->
+  <section id="convertisseur" class="section alt-bg">
+    <div class="section-header">
+      <h2>🔄 Convertisseur d'Unités</h2>
+      <p>Toutes vos mesures de cuisine converties instantanément</p>
+    </div>
+    <div class="converter-grid">
+      <div class="converter-card">
+        <h3>⚖️ Poids</h3>
+        <input type="number" id="conv-weight-val" placeholder="100" oninput="convertWeight()" />
+        <select id="conv-weight-from" onchange="convertWeight()">
+          <option value="g">Grammes (g)</option>
+          <option value="kg">Kilogrammes (kg)</option>
+          <option value="oz">Onces (oz)</option>
+          <option value="lb">Livres (lb)</option>
+        </select>
+        <div class="conv-result" id="weightResult">—</div>
+      </div>
+      <div class="converter-card">
+        <h3>💧 Volume</h3>
+        <input type="number" id="conv-vol-val" placeholder="250" oninput="convertVolume()" />
+        <select id="conv-vol-from" onchange="convertVolume()">
+          <option value="ml">Millilitres (ml)</option>
+          <option value="l">Litres (L)</option>
+          <option value="cl">Centilitres (cl)</option>
+          <option value="cup">Tasses (cup US)</option>
+          <option value="tbsp">Cuillères à soupe</option>
+          <option value="tsp">Cuillères à café</option>
+          <option value="floz">Fluid ounces (fl oz)</option>
+          <option value="pt">Pinte US (pt)</option>
+          <option value="qt">Quart US (qt)</option>
+          <option value="gal">Gallon US (gal)</option>
+        </select>
+        <div class="conv-result" id="volResult">—</div>
+      </div>
+      <div class="converter-card">
+        <h3>🌡️ Température four</h3>
+        <input type="number" id="conv-temp-val" placeholder="180" oninput="convertTemp()" />
+        <select id="conv-temp-from" onchange="convertTemp()">
+          <option value="c">Celsius (°C)</option>
+          <option value="f">Fahrenheit (°F)</option>
+          <option value="th">Thermostat (Th)</option>
+        </select>
+        <div class="conv-result" id="tempResult">—</div>
+        <p class="table-label" style="margin-top:12px">Guide thermostat :</p>
+        <table class="equiv-table">
+          <tr><td>Th 3–4</td><td>=</td><td>90–120 °C — Doux</td></tr>
+          <tr><td>Th 5</td><td>=</td><td>150–180 °C — Moyen</td></tr>
+          <tr><td>Th 6–7</td><td>=</td><td>180–210 °C — Chaud</td></tr>
+          <tr><td>Th 8</td><td>=</td><td>240–260 °C — Très vif</td></tr>
+        </table>
+      </div>
+      <div class="converter-card">
+        <h3>🥄 Mesures pratiques</h3>
+        <p class="table-label">Équivalences rapides :</p>
+        <table class="equiv-table">
+          <tr><td>1 tasse (cup)</td><td>=</td><td>250 ml</td></tr>
+          <tr><td>1 c.à.s</td><td>=</td><td>15 ml</td></tr>
+          <tr><td>1 c.à.c</td><td>=</td><td>5 ml</td></tr>
+          <tr><td>1 fl oz</td><td>=</td><td>29,57 ml</td></tr>
+          <tr><td>1 pinte US</td><td>=</td><td>473 ml</td></tr>
+          <tr><td>1 quart US</td><td>=</td><td>946 ml</td></tr>
+          <tr><td>1 gallon US</td><td>=</td><td>3,785 L</td></tr>
+          <tr><td>1 oz</td><td>=</td><td>28,35 g</td></tr>
+          <tr><td>1 lb</td><td>=</td><td>453,6 g</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HYDRATATION -->
+  <section id="hydratation" class="section">
+    <div class="section-header">
+      <h2>💧 Hydratation Quotidienne</h2>
+      <p>Combien d'eau boire selon votre poids et votre activité ?</p>
+    </div>
+    <div class="tool-container">
+      <div class="tool-form">
+        <div class="form-group"><label>Poids (kg)</label><input type="number" id="hydra-weight" placeholder="65" min="30" max="250"/></div>
+        <div class="form-group"><label>Niveau d'activité</label>
+          <select id="hydra-activity">
+            <option value="sedentaire">Sédentaire</option>
+            <option value="leger">Légèrement actif</option>
+            <option value="modere">Modérément actif</option>
+            <option value="actif">Très actif</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Climat</label>
+          <select id="hydra-climat">
+            <option value="tempere">Tempéré</option>
+            <option value="chaud">Chaud / Humide (+0,5 L)</option>
+            <option value="sport">Sport intense (+1 L)</option>
+          </select>
+        </div>
+        <button class="calc-btn" onclick="calculateHydration()">Calculer mon besoin</button>
+      </div>
+      <div class="tool-result" id="hydraResult"><div class="result-placeholder"><span>💧</span><p>Entrez votre poids et cliquez sur <strong>Calculer</strong></p></div></div>
+    </div>
+  </section>
+
+  <!-- IMC -->
+  <section id="imc" class="section alt-bg">
+    <div class="section-header">
+      <h2>📏 Calculateur IMC</h2>
+      <p>Indice de Masse Corporelle et interprétation</p>
+    </div>
+    <div class="tool-container">
+      <div class="tool-form">
+        <div class="form-row">
+          <div class="form-group"><label>Poids (kg)</label><input type="number" id="imc-weight" placeholder="65"/></div>
+          <div class="form-group"><label>Taille (cm)</label><input type="number" id="imc-height" placeholder="170"/></div>
+        </div>
+        <button class="calc-btn" onclick="calculateIMC()">Calculer mon IMC</button>
+      </div>
+      <div class="tool-result" id="imcResult"><div class="result-placeholder"><span>📏</span><p>Entrez votre poids et taille</p></div></div>
+    </div>
+  </section>
+
+  <!-- ASTUCES DE CHEF -->
+  <section id="astuces" class="section">
+    <div class="section-header">
+      <h2>💡 Astuces de Chef</h2>
+      <p>Gagner du temps, rattraper les erreurs, sublimer chaque plat</p>
+    </div>
+    <div class="astuces-tabs">
+      <button class="atab active" onclick="showAstucesTab('temps',this)">⏰ Gagner du temps</button>
+      <button class="atab" onclick="showAstucesTab('erreurs',this)">🚑 Rattraper les erreurs</button>
+      <button class="atab" onclick="showAstucesTab('substituts',this)">🔄 Substituts</button>
+      <button class="atab" onclick="showAstucesTab('fast',this)">✨ Règle F.A.S.T.</button>
+      <button class="atab" onclick="showAstucesTab('conservation',this)">🧊 Conservation</button>
+      <button class="atab" onclick="showAstucesTab('couteaux',this)">🔪 Couteaux & découpe</button>
+    </div>
+    <div id="astucesContent"></div>
+  </section>
+
+  <!-- SAISON -->
+  <section id="saison" class="section alt-bg">
+    <div class="section-header">
+      <h2>🌱 Fruits & Légumes de Saison</h2>
+      <p>Manger local et de saison en France</p>
+    </div>
+    <div class="season-nav">
+      <button class="season-btn" onclick="showMonth(new Date().getMonth())">Ce mois-ci</button>
+      <div class="month-select-wrap">
+        <select id="monthSelect" onchange="showMonth(this.value)">
+          <option value="0">Janvier</option><option value="1">Février</option>
+          <option value="2">Mars</option><option value="3">Avril</option>
+          <option value="4">Mai</option><option value="5">Juin</option>
+          <option value="6">Juillet</option><option value="7">Août</option>
+          <option value="8">Septembre</option><option value="9">Octobre</option>
+          <option value="10">Novembre</option><option value="11">Décembre</option>
+        </select>
+      </div>
+    </div>
+    <div id="seasonGrid"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-brand"><span class="leaf">🌿</span> <strong>VeggieGlow</strong></div>
+    <p>Votre compagnon de cuisine végétarienne & nutrition équilibrée</p>
+    <p class="footer-note">Les valeurs nutritionnelles sont indicatives. Consultez un professionnel de santé pour un suivi personnalisé.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
