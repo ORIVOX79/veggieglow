@@ -101,7 +101,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .recipe-card { background: var(--white); border-radius: var(--radius); overflow: hidden; cursor: pointer; transition: all 0.25s; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.04); animation: fadeInUp 0.4s ease both; }
 .recipe-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .recipe-card-img { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; overflow: hidden; }
-.recipe-card-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.recipe-card-img img { width: 100%; height: 100%; object-fit: contain; position: absolute; inset: 0; background: var(--cream); }
 .recipe-card-img .recipe-emoji-fallback { position: relative; z-index: 1; font-size: 3.5rem; }
 .recipe-card-body { padding: 18px; }
 .recipe-card-cat { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 5px; }
@@ -116,7 +116,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .modal-box { background: var(--white); border-radius: 20px; max-width: 680px; width: 90%; max-height: 88vh; overflow-y: auto; padding: 40px; position: relative; box-shadow: 0 32px 80px rgba(0,0,0,0.2); }
 .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
 .modal-close:hover { background: var(--cream-dark); }
-.modal-recipe-img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
+.modal-recipe-img { width: 100%; height: 220px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; background: var(--cream); }
 .modal-emoji { font-size: 3.5rem; margin-bottom: 10px; }
 .modal-cat { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 4px; }
 .modal-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--green-deep); margin-bottom: 8px; }
