@@ -5,7 +5,7 @@ const RECIPES = [
   // ── PETIT-DÉJEUNER (10) ──────────────────────────────────────────────────
   {
     id:1, cat:'petit-dejeuner', emoji:'🥣',
-    img:'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600',
+    img:'images/Bol-de-smoothie-a-lacai-et-mangue.png',
     name:'Bowl açaï mangue & chia',
     time:'10 min', servings:1, difficulty:'Facile',
     kcal:380, proteins:12, carbs:52, fats:14,
@@ -15,7 +15,7 @@ const RECIPES = [
   },
   {
     id:2, cat:'petit-dejeuner', emoji:'🥞',
-    img:'https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=600',
+    img:'images/Pancakes-avoine-banane.png',
     name:'Pancakes avoine & banane',
     time:'20 min', servings:2, difficulty:'Facile',
     kcal:320, proteins:11, carbs:55, fats:8,
@@ -25,7 +25,7 @@ const RECIPES = [
   },
   {
     id:3, cat:'petit-dejeuner', emoji:'🍳',
-    img:'https://images.unsplash.com/photo-1510693206972-df098062cb71?w=600',
+    img:'images/Omelette-epinards-feta.png',
     name:'Omelette épinards & feta',
     time:'15 min', servings:1, difficulty:'Facile',
     kcal:290, proteins:22, carbs:5, fats:21,
@@ -35,7 +35,7 @@ const RECIPES = [
   },
   {
     id:4, cat:'petit-dejeuner', emoji:'🍓',
-    img:'https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=600',
+    img:'images/Overnight-oats-fraises-pistaches.png',
     name:'Overnight oats fraises & pistaches',
     time:'5 min + 8h', servings:1, difficulty:'Facile',
     kcal:410, proteins:15, carbs:58, fats:13,
@@ -45,7 +45,7 @@ const RECIPES = [
   },
   {
     id:5, cat:'petit-dejeuner', emoji:'🥐',
-    img:'https://images.unsplash.com/photo-1603046891744-1f057358f23e?w=600',
+    img:'images/Toast-avocat-oeuf-poche-zaatar.png',
     name:'Toast avocat & œuf poché zaatar',
     time:'15 min', servings:1, difficulty:'Moyen',
     kcal:420, proteins:18, carbs:32, fats:26,
@@ -55,7 +55,7 @@ const RECIPES = [
   },
   {
     id:6, cat:'petit-dejeuner', emoji:'🥣',
-    img:'https://images.unsplash.com/photo-1546039907-7b9739aba2c0?w=600',
+    img:'images/Smoothie-bowl-myrtilles-spiruline.png',
     name:'Smoothie bowl myrtilles & spiruline',
     time:'10 min', servings:1, difficulty:'Facile',
     kcal:350, proteins:14, carbs:48, fats:10,
@@ -65,7 +65,7 @@ const RECIPES = [
   },
   {
     id:7, cat:'petit-dejeuner', emoji:'🍵',
-    img:'https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=600',
+    img:'images/Chia-pudding-matcha-coco.png',
     name:'Chia pudding matcha & coco',
     time:'5 min + 6h', servings:2, difficulty:'Facile',
     kcal:290, proteins:8, carbs:28, fats:16,
@@ -75,7 +75,7 @@ const RECIPES = [
   },
   {
     id:8, cat:'petit-dejeuner', emoji:'🍌',
-    img:'https://images.unsplash.com/photo-1585666059988-5fba8cade685?w=600',
+    img:'images/Pain-banane-noix-chocolat.png',
     name:'Pain banane, noix & chocolat',
     time:'65 min', servings:10, difficulty:'Facile',
     kcal:285, proteins:6, carbs:42, fats:11,
@@ -85,7 +85,7 @@ const RECIPES = [
   },
   {
     id:9, cat:'petit-dejeuner', emoji:'🥜',
-    img:'https://images.unsplash.com/photo-1501746877-14782df58970?w=600',
+    img:'images/Porridge-beurre-de-cacahuete-banane.png',
     name:'Porridge beurre de cacahuète & banane',
     time:'10 min', servings:1, difficulty:'Facile',
     kcal:450, proteins:16, carbs:62, fats:16,
@@ -95,7 +95,7 @@ const RECIPES = [
   },
   {
     id:10, cat:'petit-dejeuner', emoji:'🧇',
-    img:'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600',
+    img:'images/Gaufres-legeres-fromage-blanc-fruits.png',
     name:'Gaufres légères fromage blanc & fruits',
     time:'30 min', servings:4, difficulty:'Moyen',
     kcal:280, proteins:12, carbs:38, fats:9,
@@ -107,7 +107,7 @@ const RECIPES = [
   // ── DÉJEUNER (12) ────────────────────────────────────────────────────────
   {
     id:11, cat:'dejeuner', emoji:'🥗',
-    img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600',
+    img:'images/Bowl-quinoa-mediterraneen.png',
     name:'Bowl quinoa méditerranéen',
     time:'30 min', servings:2, difficulty:'Facile',
     kcal:520, proteins:18, carbs:68, fats:19,
@@ -117,7 +117,7 @@ const RECIPES = [
   },
   {
     id:12, cat:'dejeuner', emoji:'🍛',
-    img:'https://images.unsplash.com/photo-1547592180-85f173990554?w=600',
+    img:'images/Curry-lentilles-corail-coco.png',
     name:'Curry lentilles corail & coco',
     time:'35 min', servings:4, difficulty:'Moyen',
     kcal:445, proteins:21, carbs:62, fats:13,
@@ -127,7 +127,7 @@ const RECIPES = [
   },
   {
     id:13, cat:'dejeuner', emoji:'🥙',
-    img:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600',
+    img:'images/Wraps-falafels-houmous.png',
     name:'Wraps falafels & houmous',
     time:'45 min', servings:4, difficulty:'Moyen',
     kcal:480, proteins:16, carbs:58, fats:22,
@@ -137,7 +137,7 @@ const RECIPES = [
   },
   {
     id:14, cat:'dejeuner', emoji:'🍝',
-    img:'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600',
+    img:'images/250g-de-fusilli-ou-rigatoni.png',
     name:'Pasta pesto épinards & ricotta',
     time:'25 min', servings:2, difficulty:'Facile',
     kcal:560, proteins:20, carbs:72, fats:22,
@@ -147,7 +147,7 @@ const RECIPES = [
   },
   {
     id:15, cat:'dejeuner', emoji:'🥚',
-    img:'https://images.unsplash.com/photo-1590412200988-a436970781fa?w=600',
+    img:'images/Shakshuka-poivrons-zaatar.png',
     name:'Shakshuka poivrons & zaatar',
     time:'30 min', servings:2, difficulty:'Facile',
     kcal:310, proteins:18, carbs:24, fats:17,
@@ -157,7 +157,7 @@ const RECIPES = [
   },
   {
     id:16, cat:'dejeuner', emoji:'🌮',
-    img:'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600',
+    img:'images/Tacos-haricots-noirs-salsa-mangue.png',
     name:'Tacos haricots noirs & salsa mangue',
     time:'25 min', servings:4, difficulty:'Facile',
     kcal:420, proteins:15, carbs:52, fats:18,
@@ -167,7 +167,7 @@ const RECIPES = [
   },
   {
     id:17, cat:'dejeuner', emoji:'🍜',
-    img:'https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=600',
+    img:'images/Ramen-vegetarien-miso-tofu.png',
     name:'Ramen végétarien miso & tofu',
     time:'45 min', servings:2, difficulty:'Moyen',
     kcal:480, proteins:22, carbs:58, fats:18,
@@ -177,7 +177,7 @@ const RECIPES = [
   },
   {
     id:18, cat:'dejeuner', emoji:'🥗',
-    img:'https://images.unsplash.com/photo-1511357840105-748c95f4b9b8?w=600',
+    img:'images/Taboule-libanais-au-persil-plat.png',
     name:'Taboulé libanais au persil plat',
     time:'20 min + 1h', servings:4, difficulty:'Facile',
     kcal:240, proteins:6, carbs:34, fats:10,
@@ -187,7 +187,7 @@ const RECIPES = [
   },
   {
     id:19, cat:'dejeuner', emoji:'🍲',
-    img:'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600',
+    img:'images/Dahl-epinards-pois-chiches.png',
     name:'Dahl épinards & pois chiches',
     time:'35 min', servings:4, difficulty:'Facile',
     kcal:410, proteins:18, carbs:52, fats:15,
@@ -197,7 +197,7 @@ const RECIPES = [
   },
   {
     id:20, cat:'dejeuner', emoji:'🥘',
-    img:'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600',
+    img:'images/Risotto-champignons-huile-de-truffe.png',
     name:'Risotto champignons & huile de truffe',
     time:'40 min', servings:2, difficulty:'Moyen',
     kcal:490, proteins:14, carbs:68, fats:18,
@@ -207,7 +207,7 @@ const RECIPES = [
   },
   {
     id:21, cat:'dejeuner', emoji:'🫕',
-    img:'https://images.unsplash.com/photo-1615937722923-67f6deaf2cc9?w=600',
+    img:'images/Soupe-gaspacho-andalou.png',
     name:'Soupe gaspacho andalou',
     time:'15 min + 2h', servings:4, difficulty:'Facile',
     kcal:150, proteins:4, carbs:18, fats:8,
@@ -217,7 +217,7 @@ const RECIPES = [
   },
   {
     id:22, cat:'dejeuner', emoji:'🥞',
-    img:'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600',
+    img:'images/Quiche-poireaux-chevre.png',
     name:'Quiche poireaux & chèvre',
     time:'55 min', servings:6, difficulty:'Moyen',
     kcal:420, proteins:16, carbs:28, fats:28,
@@ -229,7 +229,7 @@ const RECIPES = [
   // ── DÎNER (12) ───────────────────────────────────────────────────────────
   {
     id:23, cat:'diner', emoji:'🥦',
-    img:'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600',
+    img:'images/Buddha-bowl-tahini-legumes-rotis.png',
     name:'Buddha bowl tahini & légumes rôtis',
     time:'45 min', servings:2, difficulty:'Facile',
     kcal:550, proteins:19, carbs:64, fats:25,
@@ -239,7 +239,7 @@ const RECIPES = [
   },
   {
     id:24, cat:'diner', emoji:'🍕',
-    img:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600',
+    img:'images/Pizza-blanche-asperges-chevre.png',
     name:'Pizza blanche asperges & chèvre',
     time:'35 min', servings:2, difficulty:'Facile',
     kcal:490, proteins:19, carbs:58, fats:21,
@@ -249,7 +249,7 @@ const RECIPES = [
   },
   {
     id:25, cat:'diner', emoji:'🧆',
-    img:'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600',
+    img:'images/Moussaka-vege-aux-lentilles.png',
     name:'Moussaka végé aux lentilles',
     time:'80 min', servings:6, difficulty:'Difficile',
     kcal:390, proteins:18, carbs:42, fats:18,
@@ -259,7 +259,7 @@ const RECIPES = [
   },
   {
     id:26, cat:'diner', emoji:'🍜',
-    img:'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=600',
+    img:'images/Pad-thai-vegetarien-aux-cacahuetes.png',
     name:'Pad thaï végétarien aux cacahuètes',
     time:'30 min', servings:2, difficulty:'Moyen',
     kcal:520, proteins:18, carbs:68, fats:20,
@@ -269,7 +269,7 @@ const RECIPES = [
   },
   {
     id:27, cat:'diner', emoji:'🫙',
-    img:'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=600',
+    img:'images/Lasagnes-epinards-ricotta.png',
     name:'Lasagnes épinards & ricotta',
     time:'70 min', servings:6, difficulty:'Moyen',
     kcal:450, proteins:22, carbs:52, fats:18,
@@ -279,7 +279,7 @@ const RECIPES = [
   },
   {
     id:28, cat:'diner', emoji:'🌶️',
-    img:'https://images.unsplash.com/photo-1604152135912-04a022e23696?w=600',
+    img:'images/Chili-sin-carne-aux-3-haricots.png',
     name:'Chili sin carne aux 3 haricots',
     time:'50 min', servings:4, difficulty:'Facile',
     kcal:430, proteins:20, carbs:62, fats:10,
@@ -289,7 +289,7 @@ const RECIPES = [
   },
   {
     id:29, cat:'diner', emoji:'🫕',
-    img:'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600',
+    img:'images/Tajine-legumes-fruits-secs.png',
     name:'Tajine légumes & fruits secs',
     time:'60 min', servings:4, difficulty:'Moyen',
     kcal:360, proteins:10, carbs:54, fats:14,
@@ -299,7 +299,7 @@ const RECIPES = [
   },
   {
     id:30, cat:'diner', emoji:'🫔',
-    img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600',
+    img:'images/Tarte-tatin-legumes-dautomne.png',
     name:'Tarte tatin légumes d\'automne',
     time:'55 min', servings:6, difficulty:'Difficile',
     kcal:380, proteins:8, carbs:42, fats:20,
@@ -309,7 +309,7 @@ const RECIPES = [
   },
   {
     id:31, cat:'diner', emoji:'🌿',
-    img:'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600',
+    img:'images/Polenta-cremeuse-champignons.png',
     name:'Polenta crémeuse & champignons',
     time:'35 min', servings:2, difficulty:'Facile',
     kcal:480, proteins:14, carbs:58, fats:22,
@@ -319,7 +319,7 @@ const RECIPES = [
   },
   {
     id:32, cat:'diner', emoji:'🥘',
-    img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600',
+    img:'images/Gratin-dauphinois-vegetalien.png',
     name:'Gratin dauphinois végétalien',
     time:'80 min', servings:6, difficulty:'Moyen',
     kcal:340, proteins:6, carbs:45, fats:15,
@@ -329,7 +329,7 @@ const RECIPES = [
   },
   {
     id:33, cat:'diner', emoji:'🍄',
-    img:'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600',
+    img:'images/Veloute-de-champignons-creme-de-truffe.png',
     name:'Velouté de champignons & crème de truffe',
     time:'35 min', servings:4, difficulty:'Facile',
     kcal:240, proteins:7, carbs:18, fats:16,
@@ -339,7 +339,7 @@ const RECIPES = [
   },
   {
     id:34, cat:'diner', emoji:'🫔',
-    img:'https://images.unsplash.com/photo-1598103442097-8b74394b95c8?w=600',
+    img:'images/Feuilletes-spanakopita-epinards-feta.png',
     name:'Feuilletés spanakopita épinards & feta',
     time:'40 min', servings:4, difficulty:'Moyen',
     kcal:380, proteins:14, carbs:32, fats:23,
@@ -351,7 +351,7 @@ const RECIPES = [
   // ── SOUPES (6) ───────────────────────────────────────────────────────────
   {
     id:35, cat:'soupe', emoji:'🫕',
-    img:'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=600',
+    img:'images/Veloute-potimarron-gingembre-coco.png',
     name:'Velouté potimarron gingembre & coco',
     time:'40 min', servings:4, difficulty:'Facile',
     kcal:220, proteins:4, carbs:32, fats:10,
@@ -361,7 +361,7 @@ const RECIPES = [
   },
   {
     id:36, cat:'soupe', emoji:'🍅',
-    img:'https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600',
+    img:'images/Soupe-tomates-roties-basilic.png',
     name:'Soupe tomates rôties & basilic',
     time:'55 min', servings:4, difficulty:'Facile',
     kcal:180, proteins:4, carbs:22, fats:9,
@@ -371,7 +371,7 @@ const RECIPES = [
   },
   {
     id:37, cat:'soupe', emoji:'🧅',
-    img:'https://images.unsplash.com/photo-1547592077-b0f93f9b4d25?w=600',
+    img:'images/Soupe-a-loignon-gratinee.png',
     name:'Soupe à l\'oignon gratinée',
     time:'65 min', servings:4, difficulty:'Moyen',
     kcal:350, proteins:14, carbs:42, fats:14,
@@ -381,7 +381,7 @@ const RECIPES = [
   },
   {
     id:38, cat:'soupe', emoji:'🥬',
-    img:'https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=600',
+    img:'images/Soupe-de-lentilles-vertes-a-la-francaise.png',
     name:'Soupe de lentilles vertes à la française',
     time:'45 min', servings:4, difficulty:'Facile',
     kcal:280, proteins:16, carbs:44, fats:6,
@@ -391,7 +391,7 @@ const RECIPES = [
   },
   {
     id:39, cat:'soupe', emoji:'🥣',
-    img:'https://images.unsplash.com/photo-1609167830220-7164aa360951?w=600',
+    img:'images/Soupe-miso-legumes-detox.png',
     name:'Soupe miso & légumes detox',
     time:'20 min', servings:2, difficulty:'Facile',
     kcal:150, proteins:9, carbs:16, fats:6,
@@ -401,7 +401,7 @@ const RECIPES = [
   },
   {
     id:40, cat:'soupe', emoji:'🌽',
-    img:'https://images.unsplash.com/photo-1571167530149-c1105da4c2c0?w=600',
+    img:'images/Veloute-de-mais-poivrons-rouges.png',
     name:'Velouté de maïs & poivrons rouges',
     time:'40 min', servings:4, difficulty:'Facile',
     kcal:220, proteins:6, carbs:38, fats:7,
@@ -413,7 +413,7 @@ const RECIPES = [
   // ── SNACKS (5) ───────────────────────────────────────────────────────────
   {
     id:41, cat:'snack', emoji:'🥜',
-    img:'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600',
+    img:'images/Energy-balls-chocolat-noisettes.png',
     name:'Energy balls chocolat & noisettes',
     time:'15 min + 30 min', servings:15, difficulty:'Facile',
     kcal:118, proteins:4, carbs:14, fats:6,
@@ -423,7 +423,7 @@ const RECIPES = [
   },
   {
     id:42, cat:'snack', emoji:'🧁',
-    img:'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=600',
+    img:'images/Muffins-courgettes-herbes.png',
     name:'Muffins courgettes & herbes',
     time:'35 min', servings:12, difficulty:'Facile',
     kcal:145, proteins:5, carbs:18, fats:6,
@@ -433,7 +433,7 @@ const RECIPES = [
   },
   {
     id:43, cat:'snack', emoji:'🫙',
-    img:'https://images.unsplash.com/photo-1577906096429-f73c2c312435?w=600',
+    img:'images/Houmous-betterave-chips-de-pita.png',
     name:'Houmous betterave & chips de pita',
     time:'15 min', servings:4, difficulty:'Facile',
     kcal:180, proteins:6, carbs:22, fats:8,
@@ -443,7 +443,7 @@ const RECIPES = [
   },
   {
     id:44, cat:'snack', emoji:'🍿',
-    img:'https://images.unsplash.com/photo-1536304993881-ff86e0c9e14c?w=600',
+    img:'images/Pois-chiches-rotis-aux-epices.png',
     name:'Pois chiches rôtis aux épices',
     time:'40 min', servings:4, difficulty:'Facile',
     kcal:158, proteins:8, carbs:22, fats:5,
@@ -453,7 +453,7 @@ const RECIPES = [
   },
   {
     id:45, cat:'snack', emoji:'🥨',
-    img:'https://images.unsplash.com/photo-1571197119292-7ddf17f3e2c9?w=600',
+    img:'images/Crackers-graines-de-lin-romarin.png',
     name:'Crackers graines de lin & romarin',
     time:'30 min', servings:6, difficulty:'Facile',
     kcal:110, proteins:4, carbs:12, fats:6,
@@ -465,7 +465,7 @@ const RECIPES = [
   // ── DESSERTS (5) ─────────────────────────────────────────────────────────
   {
     id:46, cat:'dessert', emoji:'🍮',
-    img:'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600',
+    img:'images/Panna-cotta-vanille-coulis-framboise.png',
     name:'Panna cotta vanille & coulis framboise',
     time:'20 min + 4h', servings:4, difficulty:'Moyen',
     kcal:230, proteins:4, carbs:28, fats:12,
@@ -475,7 +475,7 @@ const RECIPES = [
   },
   {
     id:47, cat:'dessert', emoji:'🍫',
-    img:'https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=600',
+    img:'images/Mousse-chocolat-noir-aquafaba.png',
     name:'Mousse chocolat noir & aquafaba',
     time:'20 min + 2h', servings:4, difficulty:'Facile',
     kcal:280, proteins:6, carbs:32, fats:16,
@@ -485,7 +485,7 @@ const RECIPES = [
   },
   {
     id:48, cat:'dessert', emoji:'🍎',
-    img:'https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=600',
+    img:'images/Crumble-pomme-poire-cannelle.png',
     name:'Crumble pomme-poire & cannelle',
     time:'45 min', servings:6, difficulty:'Facile',
     kcal:320, proteins:4, carbs:48, fats:13,
@@ -495,7 +495,7 @@ const RECIPES = [
   },
   {
     id:49, cat:'dessert', emoji:'🫐',
-    img:'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600',
+    img:'images/Cheesecake-myrtilles-sans-cuisson.png',
     name:'Cheesecake myrtilles sans cuisson',
     time:'30 min + 6h', servings:8, difficulty:'Moyen',
     kcal:390, proteins:7, carbs:38, fats:24,
@@ -505,7 +505,7 @@ const RECIPES = [
   },
   {
     id:50, cat:'dessert', emoji:'🍋',
-    img:'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600',
+    img:'images/Tarte-au-citron-meringuee.png',
     name:'Tarte au citron meringuée',
     time:'60 min + 2h', servings:8, difficulty:'Difficile',
     kcal:350, proteins:7, carbs:48, fats:16,
