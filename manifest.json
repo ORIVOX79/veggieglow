@@ -1,0 +1,56 @@
+{
+  "name": "VeggieGlow — Recettes Végétariennes & Nutrition",
+  "short_name": "VeggieGlow",
+  "description": "50 recettes végétariennes avec macros, calculateur de calories, IMC, hydratation et outils cuisine.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#faf9f6",
+  "theme_color": "#5a7a4a",
+  "lang": "fr-FR",
+  "categories": ["food", "health", "lifestyle"],
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/og-veggieglow.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "VeggieGlow — Accueil"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Recettes",
+      "short_name": "Recettes",
+      "description": "Voir les 50 recettes végétariennes",
+      "url": "/#recettes",
+      "icons": [{ "src": "images/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Calculateur calories",
+      "short_name": "Calories",
+      "description": "Calculer mon besoin calorique",
+      "url": "/#calories",
+      "icons": [{ "src": "images/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
