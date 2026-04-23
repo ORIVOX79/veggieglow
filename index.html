@@ -12,6 +12,24 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://veggieglow.fr/" />
 
+  <!-- ═══ FAVICON ═══ -->
+  <link rel="icon" href="images/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
+  <!-- ═══ HREFLANG — Tous pays francophones ═══ -->
+  <link rel="alternate" hreflang="fr-FR" href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="fr-BE" href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="fr-CH" href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="fr-CA" href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="fr-LU" href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="fr-MA" href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="fr-TN" href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="fr-SN" href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="fr"    href="https://veggieglow.fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://veggieglow.fr/" />
+
   <!-- ═══ OPEN GRAPH (Facebook, LinkedIn…) ═══ -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://veggieglow.fr/" />
@@ -429,5 +447,61 @@
 
   <script src="data.js"></script>
   <script src="app.js"></script>
+
+  <!-- ═══ SEO — Schema.org Recipe + alt images (généré dynamiquement) ═══ -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // ── 1. Injecter alt sur les images de recettes déjà rendues ──
+    function patchImgAlts() {
+      document.querySelectorAll('#recipeGrid img').forEach(img => {
+        if (!img.alt) {
+          const title = img.closest('.recipe-card')?.querySelector('.recipe-name, h3, h4, strong');
+          if (title) img.alt = 'Recette végétarienne : ' + title.textContent.trim();
+        }
+      });
+    }
+    setTimeout(patchImgAlts, 500);
+    setTimeout(patchImgAlts, 1500);
+
+    // ── 2. Schema.org Recipe pour chaque recette ──
+    if (typeof RECIPES !== 'undefined') {
+      const schemas = RECIPES.map(r => ({
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        "name": r.name,
+        "description": "Recette végétarienne : " + r.name + ". " + r.kcal + " kcal, prête en " + r.time + ".",
+        "image": r.img ? ["https://veggieglow.fr/" + r.img] : [],
+        "author": { "@type": "Organization", "name": "VeggieGlow" },
+        "publisher": { "@type": "Organization", "name": "VeggieGlow", "url": "https://veggieglow.fr/" },
+        "prepTime": "PT" + (parseInt(r.time) || 20) + "M",
+        "totalTime": "PT" + (parseInt(r.time) || 20) + "M",
+        "recipeYield": (r.servings || 1) + " portion(s)",
+        "recipeCategory": r.cat,
+        "recipeIngredient": r.ingredients || [],
+        "recipeInstructions": (r.steps || []).map((s, i) => ({
+          "@type": "HowToStep",
+          "position": i + 1,
+          "text": s
+        })),
+        "nutrition": {
+          "@type": "NutritionInformation",
+          "calories": r.kcal + " kcal",
+          "proteinContent": r.proteins + "g",
+          "carbohydrateContent": r.carbs + "g",
+          "fatContent": r.fats + "g"
+        },
+        "keywords": "recette végétarienne, " + r.name + ", " + r.cat,
+        "inLanguage": "fr-FR",
+        "url": "https://veggieglow.fr/#recettes"
+      }));
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(schemas);
+      document.head.appendChild(script);
+    }
+  });
+  </script>
 </body>
 </html>
