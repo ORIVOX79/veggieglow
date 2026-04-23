@@ -17,6 +17,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#5a7a4a" />
 
   <!-- ═══ HREFLANG — Tous pays francophones ═══ -->
   <link rel="alternate" hreflang="fr-FR" href="https://veggieglow.fr/" />
@@ -506,5 +508,16 @@
     }
   });
   </script>
+  <!-- ═══ PWA — Enregistrement du Service Worker ═══ -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('[VeggieGlow] SW enregistré :', reg.scope))
+          .catch(err => console.warn('[VeggieGlow] SW échec :', err));
+      });
+    }
+  </script>
+
 </body>
 </html>
