@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>50 Recettes Végétariennes — VeggieGlow</title>
+  <meta name="description" content="Découvrez 50 recettes végétariennes détaillées avec macros complètes : petit-déjeuner, déjeuner, dîner, soupes, snacks et desserts. Cuisine végétarienne facile et savoureuse." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://veggieglow.fr/recettes/" />
+  <link rel="icon" href="/images/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#5a7a4a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://veggieglow.fr/recettes/" />
+  <meta property="og:title" content="50 Recettes Végétariennes — VeggieGlow" />
+  <meta property="og:description" content="50 recettes végétariennes avec macros complètes. Petit-déjeuner, déjeuner, dîner, soupes, snacks et desserts." />
+  <meta property="og:image" content="https://veggieglow.fr/images/og-veggieglow.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="VeggieGlow" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"50 Recettes Végétariennes — VeggieGlow","description":"Découvrez 50 recettes végétariennes détaillées avec macros complètes : petit-déjeuner, déjeuner, dîner, soupes, snacks et desserts.","url":"https://veggieglow.fr/recettes/","inLanguage":"fr-FR"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://veggieglow.fr/"},{"@type":"ListItem","position":2,"name":"Recettes","item":"https://veggieglow.fr/recettes/"}]}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRRHWW24DZ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NRRHWW24DZ');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .nav-logo{height:36px;width:auto;display:inline-block;vertical-align:middle;margin-right:2px}
+    .recipes-page{max-width:1100px;margin:0 auto;padding:40px 20px 80px}
+    .breadcrumb{font-size:.85rem;color:#888;margin-bottom:32px}
+    .breadcrumb a{color:var(--sage,#5a7a4a);text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .recipes-page h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:8px}
+    .recipes-page .subtitle{color:#666;margin-bottom:32px;font-size:1.05rem}
+    .search-bar{margin-bottom:24px}
+    .search-bar input{width:100%;max-width:500px;padding:12px 20px;border:2px solid #e0e7da;border-radius:50px;font-size:1rem;outline:none;font-family:'DM Sans',sans-serif}
+    .search-bar input:focus{border-color:var(--sage,#5a7a4a)}
+    .recipe-count{font-size:.9rem;color:#888;margin-bottom:20px}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand"><a href="/" style="text-decoration:none;display:flex;align-items:center;gap:6px"><img src="/images/logo-navbar.png" alt="VeggieGlow logo" class="nav-logo" /><span class="brand-name">VeggieGlow</span></a></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/recettes/">Recettes</a></li>
+      <li><a href="/#calories">Calories</a></li>
+      <li><a href="/#macros">Macros</a></li>
+      <li><a href="/#quantites">Quantités</a></li>
+      <li><a href="/#cuisson">Cuisson</a></li>
+      <li><a href="/#convertisseur">Unités</a></li>
+      <li><a href="/#hydratation">Hydratation</a></li>
+      <li><a href="/#imc">IMC</a></li>
+      <li><a href="/#astuces">Astuces</a></li>
+      <li><a href="/#saison">Saison</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </nav>
+
+  <main class="recipes-page">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/">Accueil</a> › Recettes
+    </nav>
+    <h1>50 Recettes Végétariennes</h1>
+    <p class="subtitle">Des recettes détaillées avec macros complètes pour une alimentation végétarienne équilibrée</p>
+
+    <div class="search-bar">
+      <input type="text" id="recipeSearch" placeholder="🔍 Rechercher une recette…" oninput="filterSearch()" />
+    </div>
+
+    <div class="recipe-filters" id="recipeFilters">
+      <button class="filter-btn active" data-cat="tous" onclick="filterCat('tous',this)">Toutes</button><button class="filter-btn" data-cat="petit-dejeuner" onclick="filterCat('petit-dejeuner',this)">Petit-déjeuner</button><button class="filter-btn" data-cat="dejeuner" onclick="filterCat('dejeuner',this)">Déjeuner</button><button class="filter-btn" data-cat="diner" onclick="filterCat('diner',this)">Dîner</button><button class="filter-btn" data-cat="soupe" onclick="filterCat('soupe',this)">Soupes</button><button class="filter-btn" data-cat="snack" onclick="filterCat('snack',this)">Snacks</button><button class="filter-btn" data-cat="dessert" onclick="filterCat('dessert',this)">Desserts</button><button class="filter-btn" data-cat="boisson" onclick="filterCat('boisson',this)">Boissons</button>
+    </div>
+
+    <div class="recipe-count" id="recipeCount">50 recettes trouvées</div>
+    <div class="recipe-grid" id="recipeGrid">
+      
+    <a class="recipe-card" href="/recettes/bowl-acai-mangue-chia/" data-cat="petit-dejeuner" style="animation-delay:0s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#667eea22,#764ba244)"><img src="/images/Bol-de-smoothie-a-lacai-et-mangue.png" alt="Bowl açaï mangue & chia" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Bowl açaï mangue & chia</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 10 min</span>
+          <span>👤 1 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 380 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/pancakes-avoine-banane/" data-cat="petit-dejeuner" style="animation-delay:0.04s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f6d36522,#f093fb22)"><img src="/images/Pancakes-avoine-banane.png" alt="Pancakes avoine & banane" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Pancakes avoine & banane</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 20 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 320 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/omelette-epinards-feta/" data-cat="petit-dejeuner" style="animation-delay:0.08s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#43e97b22,#38f9d722)"><img src="/images/Omelette-epinards-feta.png" alt="Omelette épinards & feta" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Omelette épinards & feta</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 15 min</span>
+          <span>👤 1 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 290 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/overnight-oats-fraises-pistaches/" data-cat="petit-dejeuner" style="animation-delay:0.12s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#ff9a9e22,#fecfef22)"><img src="/images/Overnight-oats-fraises-pistaches.png" alt="Overnight oats fraises & pistaches" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Overnight oats fraises & pistaches</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 5 min + 8h</span>
+          <span>👤 1 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 410 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/toast-avocat-oeuf-poche-zaatar/" data-cat="petit-dejeuner" style="animation-delay:0.16s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#d4fc7922,#96e6a122)"><img src="/images/Toast-avocat-oeuf-poche-zaatar.png" alt="Toast avocat & œuf poché zaatar" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Toast avocat & œuf poché zaatar</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 15 min</span>
+          <span>👤 1 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 420 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/smoothie-bowl-myrtilles-spiruline/" data-cat="petit-dejeuner" style="animation-delay:0.2s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#4776e622,#8e54e922)"><img src="/images/Smoothie-bowl-myrtilles-spiruline.png" alt="Smoothie bowl myrtilles & spiruline" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Smoothie bowl myrtilles & spiruline</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 10 min</span>
+          <span>👤 1 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 350 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/chia-pudding-matcha-coco/" data-cat="petit-dejeuner" style="animation-delay:0.24s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#43e97b22,#38f9d722)"><img src="/images/Chia-pudding-matcha-coco.png" alt="Chia pudding matcha & coco" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Chia pudding matcha & coco</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 5 min + 6h</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 290 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/pain-banane-noix-chocolat/" data-cat="petit-dejeuner" style="animation-delay:0.28s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f7971e22,#ffd20022)"><img src="/images/Pain-banane-noix-chocolat.png" alt="Pain banane, noix & chocolat" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Pain banane, noix & chocolat</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 65 min</span>
+          <span>👤 10 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 285 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/porridge-beurre-de-cacahuete-banane/" data-cat="petit-dejeuner" style="animation-delay:0.32s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#c79f3022,#e55d8722)"><img src="/images/Porridge-beurre-de-cacahuete-banane.png" alt="Porridge beurre de cacahuète & banane" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Porridge beurre de cacahuète & banane</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 10 min</span>
+          <span>👤 1 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 450 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/gaufres-legeres-fromage-blanc-fruits/" data-cat="petit-dejeuner" style="animation-delay:0.36s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#a8edea22,#fed6e322)"><img src="/images/Gaufres-legeres-fromage-blanc-fruits.png" alt="Gaufres légères fromage blanc & fruits" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Petit-déjeuner</div>
+        <h3>Gaufres légères fromage blanc & fruits</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 30 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 280 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/bowl-quinoa-mediterraneen/" data-cat="dejeuner" style="animation-delay:0.4s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#a8edea22,#fed6e322)"><img src="/images/Bowl-quinoa-mediterraneen.png" alt="Bowl quinoa méditerranéen" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Bowl quinoa méditerranéen</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 30 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 520 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/curry-lentilles-corail-coco/" data-cat="dejeuner" style="animation-delay:0.44s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#ffd89b22,#19547b22)"><img src="/images/Curry-lentilles-corail-coco.png" alt="Curry lentilles corail & coco" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Curry lentilles corail & coco</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 35 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 445 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/wraps-falafels-houmous/" data-cat="dejeuner" style="animation-delay:0s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#d4fc7922,#96e6a122)"><img src="/images/Wraps-falafels-houmous.png" alt="Wraps falafels & houmous" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Wraps falafels & houmous</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 45 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 480 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/pasta-pesto-epinards-ricotta/" data-cat="dejeuner" style="animation-delay:0.04s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#43e97b22,#38f9d722)"><img src="/images/250g-de-fusilli-ou-rigatoni.png" alt="Pasta pesto épinards & ricotta" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Pasta pesto épinards & ricotta</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 25 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 560 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/shakshuka-poivrons-zaatar/" data-cat="dejeuner" style="animation-delay:0.08s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#ff616122,#ffc16422)"><img src="/images/Shakshuka-poivrons-zaatar.png" alt="Shakshuka poivrons & zaatar" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Shakshuka poivrons & zaatar</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 30 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 310 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/tacos-haricots-noirs-salsa-mangue/" data-cat="dejeuner" style="animation-delay:0.12s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#1e3c7222,#2a529822)"><img src="/images/Tacos-haricots-noirs-salsa-mangue.png" alt="Tacos haricots noirs & salsa mangue" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Tacos haricots noirs & salsa mangue</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 25 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 420 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/ramen-vegetarien-miso-tofu/" data-cat="dejeuner" style="animation-delay:0.16s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#24243e22,#30203022)"><img src="/images/Ramen-vegetarien-miso-tofu.png" alt="Ramen végétarien miso & tofu" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Ramen végétarien miso & tofu</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 45 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 480 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/taboule-libanais-au-persil-plat/" data-cat="dejeuner" style="animation-delay:0.2s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#d4fc7922,#96e6a122)"><img src="/images/Taboule-libanais-au-persil-plat.png" alt="Taboulé libanais au persil plat" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Taboulé libanais au persil plat</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 20 min + 1h</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 240 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/dahl-epinards-pois-chiches/" data-cat="dejeuner" style="animation-delay:0.24s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#ffd89b22,#19547b22)"><img src="/images/Dahl-epinards-pois-chiches.png" alt="Dahl épinards & pois chiches" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Dahl épinards & pois chiches</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 35 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 410 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/risotto-champignons-huile-de-truffe/" data-cat="dejeuner" style="animation-delay:0.28s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#89216b22,#da449122)"><img src="/images/Risotto-champignons-huile-de-truffe.png" alt="Risotto champignons & huile de truffe" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Risotto champignons & huile de truffe</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 40 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 490 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/soupe-gaspacho-andalou/" data-cat="dejeuner" style="animation-delay:0.32s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f9953022,#ef473a22)"><img src="/images/Soupe-gaspacho-andalou.png" alt="Soupe gaspacho andalou" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Soupe gaspacho andalou</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 15 min + 2h</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 150 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/quiche-poireaux-chevre/" data-cat="dejeuner" style="animation-delay:0.36s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#89216b22,#da449122)"><img src="/images/Quiche-poireaux-chevre.png" alt="Quiche poireaux & chèvre" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Déjeuner</div>
+        <h3>Quiche poireaux & chèvre</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 55 min</span>
+          <span>👤 6 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 420 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/buddha-bowl-tahini-legumes-rotis/" data-cat="diner" style="animation-delay:0.4s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#43e97b22,#38f9d722)"><img src="/images/Buddha-bowl-tahini-legumes-rotis.png" alt="Buddha bowl tahini & légumes rôtis" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Buddha bowl tahini & légumes rôtis</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 45 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 550 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/pizza-blanche-asperges-chevre/" data-cat="diner" style="animation-delay:0.44s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#ffffff22,#96ceb422)"><img src="/images/Pizza-blanche-asperges-chevre.png" alt="Pizza blanche asperges & chèvre" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Pizza blanche asperges & chèvre</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 35 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 490 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/moussaka-vege-aux-lentilles/" data-cat="diner" style="animation-delay:0s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#6c5ce722,#a29bfe22)"><img src="/images/Moussaka-vege-aux-lentilles.png" alt="Moussaka végé aux lentilles" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Moussaka végé aux lentilles</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 80 min</span>
+          <span>👤 6 pers.</span>
+          <span>📊 Difficile</span>
+        </div>
+        <div class="recipe-kcal">🔥 390 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/pad-thai-vegetarien-aux-cacahuetes/" data-cat="diner" style="animation-delay:0.04s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f9953022,#ef473a22)"><img src="/images/Pad-thai-vegetarien-aux-cacahuetes.png" alt="Pad thaï végétarien aux cacahuètes" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Pad thaï végétarien aux cacahuètes</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 30 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 520 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/lasagnes-epinards-ricotta/" data-cat="diner" style="animation-delay:0.08s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#43e97b22,#38f9d722)"><img src="/images/Lasagnes-epinards-ricotta.png" alt="Lasagnes épinards & ricotta" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Lasagnes épinards & ricotta</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 70 min</span>
+          <span>👤 6 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 450 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/chili-sin-carne-aux-3-haricots/" data-cat="diner" style="animation-delay:0.12s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f9953022,#ef473a22)"><img src="/images/Chili-sin-carne-aux-3-haricots.png" alt="Chili sin carne aux 3 haricots" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Chili sin carne aux 3 haricots</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 50 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 430 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/tajine-legumes-fruits-secs/" data-cat="diner" style="animation-delay:0.16s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#ffd89b22,#19547b22)"><img src="/images/Tajine-legumes-fruits-secs.png" alt="Tajine légumes & fruits secs" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Tajine légumes & fruits secs</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 60 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 360 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/tarte-tatin-legumes-dautomne/" data-cat="diner" style="animation-delay:0.2s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#c79f3022,#e55d8722)"><img src="/images/Tarte-tatin-legumes-dautomne.png" alt="Tarte tatin légumes d'automne" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Tarte tatin légumes d'automne</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 55 min</span>
+          <span>👤 6 pers.</span>
+          <span>📊 Difficile</span>
+        </div>
+        <div class="recipe-kcal">🔥 380 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/polenta-cremeuse-champignons/" data-cat="diner" style="animation-delay:0.24s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#89216b22,#da449122)"><img src="/images/Polenta-cremeuse-champignons.png" alt="Polenta crémeuse & champignons" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Polenta crémeuse & champignons</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 35 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 480 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/gratin-dauphinois-vegetalien/" data-cat="diner" style="animation-delay:0.28s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f5e6c822,#e5bccd22)"><img src="/images/Gratin-dauphinois-vegetalien.png" alt="Gratin dauphinois végétalien" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Gratin dauphinois végétalien</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 80 min</span>
+          <span>👤 6 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 340 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/veloute-de-champignons-creme-de-truffe/" data-cat="diner" style="animation-delay:0.32s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#24243e22,#30203022)"><img src="/images/Veloute-de-champignons-creme-de-truffe.png" alt="Velouté de champignons & crème de truffe" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Velouté de champignons & crème de truffe</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 35 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 240 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/feuilletes-spanakopita-epinards-feta/" data-cat="diner" style="animation-delay:0.36s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#43e97b22,#38f9d722)"><img src="/images/Feuilletes-spanakopita-epinards-feta.png" alt="Feuilletés spanakopita épinards & feta" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dîner</div>
+        <h3>Feuilletés spanakopita épinards & feta</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 40 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 380 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/veloute-potimarron-gingembre-coco/" data-cat="soupe" style="animation-delay:0.4s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f9953022,#ef473a22)"><img src="/images/Veloute-potimarron-gingembre-coco.png" alt="Velouté potimarron gingembre & coco" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Soupe</div>
+        <h3>Velouté potimarron gingembre & coco</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 40 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 220 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/soupe-tomates-roties-basilic/" data-cat="soupe" style="animation-delay:0.44s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f9953022,#ef473a22)"><img src="/images/Soupe-tomates-roties-basilic.png" alt="Soupe tomates rôties & basilic" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Soupe</div>
+        <h3>Soupe tomates rôties & basilic</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 55 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 180 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/soupe-a-loignon-gratinee/" data-cat="soupe" style="animation-delay:0s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f6d36522,#f093fb22)"><img src="/images/Soupe-a-loignon-gratinee.png" alt="Soupe à l'oignon gratinée" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Soupe</div>
+        <h3>Soupe à l'oignon gratinée</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 65 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 350 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/soupe-de-lentilles-vertes-a-la-francaise/" data-cat="soupe" style="animation-delay:0.04s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#24243e22,#30203022)"><img src="/images/Soupe-de-lentilles-vertes-a-la-francaise.png" alt="Soupe de lentilles vertes à la française" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Soupe</div>
+        <h3>Soupe de lentilles vertes à la française</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 45 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 280 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/soupe-miso-legumes-detox/" data-cat="soupe" style="animation-delay:0.08s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#a8edea22,#fed6e322)"><img src="/images/Soupe-miso-legumes-detox.png" alt="Soupe miso & légumes detox" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Soupe</div>
+        <h3>Soupe miso & légumes detox</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 20 min</span>
+          <span>👤 2 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 150 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/veloute-de-mais-poivrons-rouges/" data-cat="soupe" style="animation-delay:0.12s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f7971e22,#ffd20022)"><img src="/images/Veloute-de-mais-poivrons-rouges.png" alt="Velouté de maïs & poivrons rouges" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Soupe</div>
+        <h3>Velouté de maïs & poivrons rouges</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 40 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 220 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/energy-balls-chocolat-noisettes/" data-cat="snack" style="animation-delay:0.16s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#3d1c0222,#783f0422)"><img src="/images/Energy-balls-chocolat-noisettes.png" alt="Energy balls chocolat & noisettes" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Snack</div>
+        <h3>Energy balls chocolat & noisettes</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 15 min + 30 min</span>
+          <span>👤 15 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 118 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/muffins-courgettes-herbes/" data-cat="snack" style="animation-delay:0.2s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#96ceb422,#88d8b022)"><img src="/images/Muffins-courgettes-herbes.png" alt="Muffins courgettes & herbes" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Snack</div>
+        <h3>Muffins courgettes & herbes</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 35 min</span>
+          <span>👤 12 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 145 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/houmous-betterave-chips-de-pita/" data-cat="snack" style="animation-delay:0.24s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#e91e8c22,#ff607022)"><img src="/images/Houmous-betterave-chips-de-pita.png" alt="Houmous betterave & chips de pita" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Snack</div>
+        <h3>Houmous betterave & chips de pita</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 15 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 180 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/pois-chiches-rotis-aux-epices/" data-cat="snack" style="animation-delay:0.28s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#ffd89b22,#19547b22)"><img src="/images/Pois-chiches-rotis-aux-epices.png" alt="Pois chiches rôtis aux épices" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Snack</div>
+        <h3>Pois chiches rôtis aux épices</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 40 min</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 158 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/crackers-graines-de-lin-romarin/" data-cat="snack" style="animation-delay:0.32s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#fdfcfb22,#e2d1c322)"><img src="/images/Crackers-graines-de-lin-romarin.png" alt="Crackers graines de lin & romarin" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Snack</div>
+        <h3>Crackers graines de lin & romarin</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 30 min</span>
+          <span>👤 6 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 110 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/panna-cotta-vanille-coulis-framboise/" data-cat="dessert" style="animation-delay:0.36s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#fff9c422,#ff6b6b22)"><img src="/images/Panna-cotta-vanille-coulis-framboise.png" alt="Panna cotta vanille & coulis framboise" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dessert</div>
+        <h3>Panna cotta vanille & coulis framboise</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 20 min + 4h</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 230 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/mousse-chocolat-noir-aquafaba/" data-cat="dessert" style="animation-delay:0.4s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#24243e22,#30203022)"><img src="/images/Mousse-chocolat-noir-aquafaba.png" alt="Mousse chocolat noir & aquafaba" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dessert</div>
+        <h3>Mousse chocolat noir & aquafaba</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 20 min + 2h</span>
+          <span>👤 4 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 280 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/crumble-pomme-poire-cannelle/" data-cat="dessert" style="animation-delay:0.44s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f7971e22,#ffd20022)"><img src="/images/Crumble-pomme-poire-cannelle.png" alt="Crumble pomme-poire & cannelle" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dessert</div>
+        <h3>Crumble pomme-poire & cannelle</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 45 min</span>
+          <span>👤 6 pers.</span>
+          <span>📊 Facile</span>
+        </div>
+        <div class="recipe-kcal">🔥 320 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/cheesecake-myrtilles-sans-cuisson/" data-cat="dessert" style="animation-delay:0s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#4776e622,#8e54e922)"><img src="/images/Cheesecake-myrtilles-sans-cuisson.png" alt="Cheesecake myrtilles sans cuisson" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dessert</div>
+        <h3>Cheesecake myrtilles sans cuisson</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 30 min + 6h</span>
+          <span>👤 8 pers.</span>
+          <span>📊 Moyen</span>
+        </div>
+        <div class="recipe-kcal">🔥 390 kcal</div>
+      </div>
+    </a>
+    <a class="recipe-card" href="/recettes/tarte-au-citron-meringuee/" data-cat="dessert" style="animation-delay:0.04s;text-decoration:none;color:inherit;display:block">
+      <div class="recipe-card-img" style="background:linear-gradient(135deg,#f6d36522,#ffecd222)"><img src="/images/Tarte-au-citron-meringuee.png" alt="Tarte au citron meringuée" loading="lazy" onerror="this.style.display='none'" /></div>
+      <div class="recipe-card-body">
+        <div class="recipe-card-cat">Dessert</div>
+        <h3>Tarte au citron meringuée</h3>
+        <div class="recipe-card-meta">
+          <span>⏱ 60 min + 2h</span>
+          <span>👤 8 pers.</span>
+          <span>📊 Difficile</span>
+        </div>
+        <div class="recipe-kcal">🔥 350 kcal</div>
+      </div>
+    </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand"><span class="leaf">🌿</span> <strong>VeggieGlow</strong></div>
+    <p>Votre compagnon de cuisine végétarienne & nutrition équilibrée</p>
+    <p class="footer-note">Les valeurs nutritionnelles sont indicatives. Consultez un professionnel de santé pour un suivi personnalisé.</p>
+  </footer>
+
+  <script>
+    let currentCat = 'tous';
+    let currentSearch = '';
+
+    function filterCat(cat, btn) {
+      currentCat = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyFilters();
+    }
+
+    function filterSearch() {
+      currentSearch = document.getElementById('recipeSearch').value.toLowerCase();
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const cards = document.querySelectorAll('#recipeGrid .recipe-card');
+      let count = 0;
+      cards.forEach(card => {
+        const matchCat = currentCat === 'tous' || card.dataset.cat === currentCat;
+        const matchSearch = !currentSearch || card.querySelector('h3').textContent.toLowerCase().includes(currentSearch);
+        const show = matchCat && matchSearch;
+        card.style.display = show ? 'block' : 'none';
+        if (show) count++;
+      });
+      document.getElementById('recipeCount').textContent = count + ' recette' + (count > 1 ? 's' : '') + ' trouvée' + (count > 1 ? 's' : '');
+    }
+  </script>
+</body>
+</html>
