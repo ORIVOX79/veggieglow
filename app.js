@@ -21,6 +21,16 @@ function catLabel(cat) {
   return map[cat] || cat;
 }
 
+function slugify(str) {
+  return str
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/œ/g, 'oe').replace(/æ/g, 'ae')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim().replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
 // ── RECIPES ──────────────────────────────────────────────────────────────
 function renderRecipes() {
   const search = (document.getElementById('recipeSearch').value || '').toLowerCase();
@@ -44,7 +54,7 @@ function renderRecipes() {
       ? `<img src="${r.img}" alt="${r.name}" loading="lazy" onerror="this.style.display='none'" />`
       : `<span class="recipe-emoji-fallback">${r.emoji}</span>`;
     return `
-    <div class="recipe-card" onclick="openRecipe(${r.id})" style="animation-delay:${(i%12)*0.04}s">
+    <a class="recipe-card" href="/recettes/${slugify(r.name)}/" style="animation-delay:${(i%12)*0.04}s;text-decoration:none;color:inherit;display:block">
       <div class="recipe-card-img" style="background:${r.bg}">${imgHtml}</div>
       <div class="recipe-card-body">
         <div class="recipe-card-cat">${catLabel(r.cat)}</div>
@@ -56,7 +66,7 @@ function renderRecipes() {
         </div>
         <div class="recipe-kcal">🔥 ${r.kcal} kcal</div>
       </div>
-    </div>`;
+    </a>`;
   }).join('');
 }
 
